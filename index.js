@@ -28,6 +28,4 @@ app.post('/api/lookup', function(req, res){
     });
 });
 
-app.listen(port, function(){
-    console.log('port: '+port);
-});
+app.listen(process.env.port||port);
