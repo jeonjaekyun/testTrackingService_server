@@ -8,7 +8,7 @@ const port = 5000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/api/',function(req,res){
+app.get('/',function(req,res){
     res.send('hello');
 });
 
@@ -32,4 +32,4 @@ app.post('/api/lookup', function(req, res){
     });
 });
 
-app.listen(process.env.port||port);
+app.listen(process.env.PORT||port);
