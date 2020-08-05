@@ -8,6 +8,10 @@ const port = 5000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.get('/api/',function(req,res){
+    res.send('hello');
+});
+
 app.post('/api/lookup', function(req, res){
     const tCode = req.body.tCode;
     const tInvoice = req.body.tInvoice;
