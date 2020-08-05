@@ -1,12 +1,14 @@
 const request = require('request');
 const bodyParser = require('body-parser');
 const config = require('./config/key');
+const cors = require('cors');
 const express = require('express');
 const app = express();
 const port = 5000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get('/',function(req,res){
     res.send('hello');
