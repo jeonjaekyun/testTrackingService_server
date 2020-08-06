@@ -29,7 +29,8 @@ app.post('/api/lookup', function(req, res){
     }
 
     request(options,function(err, response, body){
-        if(err) return res.status(400).json({success:false});
+        if(err) return res.status(400).json({success:false, msg:'err'});
+        if(body.status===false) return res.json({success:false, msg:body.msg});
         return res.status(200).json({success:true, trackingInfo:body});
     });
 });
